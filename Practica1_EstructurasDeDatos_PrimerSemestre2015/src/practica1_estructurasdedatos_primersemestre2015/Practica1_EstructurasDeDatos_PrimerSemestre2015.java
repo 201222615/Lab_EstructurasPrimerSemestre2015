@@ -17,6 +17,9 @@ public class Practica1_EstructurasDeDatos_PrimerSemestre2015 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        String x; 
+        x = "Hola Mundo";
     }
     
 }
+
