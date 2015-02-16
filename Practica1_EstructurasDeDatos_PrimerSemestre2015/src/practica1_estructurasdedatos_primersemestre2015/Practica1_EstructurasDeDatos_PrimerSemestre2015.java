@@ -6,6 +6,12 @@
 
 package practica1_estructurasdedatos_primersemestre2015;
 
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import javazoom.jl.decoder.JavaLayerException;
+import javazoom.jl.player.Player;
+
 /**
  *
  * @author juanpablo
@@ -17,9 +23,11 @@ public class Practica1_EstructurasDeDatos_PrimerSemestre2015 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       Int x; 
-       String Y;
-       Y = x+1 ;
+       Bienvenido nomostrar = new Bienvenido ();   
+       nomostrar.setVisible(true);     
+nomostrar.setLocationRelativeTo(null);
+ 
+   
     }
     
 }
