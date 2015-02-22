@@ -51,10 +51,13 @@ public class Elegir_Bando extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCrearPlantas);
-        btnCrearPlantas.setBounds(140, 150, 170, 23);
+        btnCrearPlantas.setBounds(10, 10, 170, 23);
 
         btnCrearZombies.setBackground(new java.awt.Color(0, 0, 255));
-        btnCrearZombies.setText("Jugador Zombies");
+        btnCrearZombies.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/grave.png"))); // NOI18N
+        btnCrearZombies.setBorderPainted(false);
+        btnCrearZombies.setContentAreaFilled(false);
+        btnCrearZombies.setFocusPainted(false);
         btnCrearZombies.setPreferredSize(new java.awt.Dimension(711, 423));
         btnCrearZombies.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,23 +65,26 @@ public class Elegir_Bando extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCrearZombies);
-        btnCrearZombies.setBounds(510, 120, 180, 20);
+        btnCrearZombies.setBounds(520, 160, 210, 260);
 
         btnJuego.setBackground(new java.awt.Color(51, 0, 51));
         btnJuego.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/vs.png"))); // NOI18N
         btnJuego.setText("Comenzar Juego");
+        btnJuego.setBorderPainted(false);
+        btnJuego.setContentAreaFilled(false);
+        btnJuego.setFocusPainted(false);
         btnJuego.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnJuegoActionPerformed(evt);
             }
         });
         getContentPane().add(btnJuego);
-        btnJuego.setBounds(150, 190, 160, 100);
+        btnJuego.setBounds(10, 270, 170, 140);
 
         btnEliminar.setBackground(new java.awt.Color(255, 255, 51));
         btnEliminar.setText("Eliminar Datos");
         getContentPane().add(btnEliminar);
-        btnEliminar.setBounds(520, 170, 150, 23);
+        btnEliminar.setBounds(120, 90, 150, 23);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/contra.png"))); // NOI18N
         getContentPane().add(jLabel1);
