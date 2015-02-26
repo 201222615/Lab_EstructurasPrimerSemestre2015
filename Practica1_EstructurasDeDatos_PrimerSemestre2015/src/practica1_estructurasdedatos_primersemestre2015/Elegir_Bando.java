@@ -138,6 +138,12 @@ sonido.play();
 
 
 
+
+
+
+
+
+
  PlantasVsZombies mostrar = new PlantasVsZombies ();
   mostrar.setVisible(true);
     Elegir_Bando.this.dispose();
