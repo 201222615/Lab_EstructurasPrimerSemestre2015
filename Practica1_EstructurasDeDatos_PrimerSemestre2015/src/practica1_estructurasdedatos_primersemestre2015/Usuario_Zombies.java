@@ -7,6 +7,8 @@
 package practica1_estructurasdedatos_primersemestre2015;
 
 import java.applet.AudioClip;
+import javax.swing.JOptionPane;
+import static practica1_estructurasdedatos_primersemestre2015.Practica1_EstructurasDeDatos_PrimerSemestre2015.listaJ;
 
 /**
  *
@@ -81,6 +83,22 @@ public class Usuario_Zombies extends javax.swing.JFrame {
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         // TODO add your handling code here:
+          JugadorGeneral jTemp = new  JugadorGeneral();
+        jTemp.setNombre(this.txtNombreZombie.getText());
+        jTemp.setUsuario(this.txtCantidadZombie.getText());
+        
+        listaJ.Add(jTemp);        
+
+        JOptionPane.showMessageDialog(this,"Número de Jugador Zombie "+listaJ.Length());  
+        
+        this.txtNombreZombie.setText("");
+        this.txtCantidadZombie.setText(""); 
+        
+        
+        
+        
+        
+        
         AudioClip sonido;
 sonido = java.applet.Applet.newAudioClip(getClass().getResource("/practica1_estructurasdedatos_primersemestre2015/ok.wav"));
 sonido.play();

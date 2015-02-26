@@ -7,6 +7,8 @@
 package practica1_estructurasdedatos_primersemestre2015;
 
 import java.applet.AudioClip;
+import javax.swing.JOptionPane;
+import static practica1_estructurasdedatos_primersemestre2015.Practica1_EstructurasDeDatos_PrimerSemestre2015.listaPoZ;
 
 /**
  *
@@ -35,6 +37,7 @@ public class Elegir_Bando extends javax.swing.JFrame {
         btnCrearZombies = new javax.swing.JButton();
         btnJuego = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
+        btnCatalogoPlantas = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -86,6 +89,15 @@ public class Elegir_Bando extends javax.swing.JFrame {
         getContentPane().add(btnEliminar);
         btnEliminar.setBounds(120, 90, 150, 23);
 
+        btnCatalogoPlantas.setText("Catalogo Plantas");
+        btnCatalogoPlantas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCatalogoPlantasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnCatalogoPlantas);
+        btnCatalogoPlantas.setBounds(510, 10, 190, 23);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/contra.png"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 710, 420);
@@ -134,6 +146,54 @@ mostrar.setLocationRelativeTo(null);
  
     }//GEN-LAST:event_btnJuegoActionPerformed
 
+    private void btnCatalogoPlantasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCatalogoPlantasActionPerformed
+        // TODO add your handling code here:
+             String pno="", pnom="", ppa="", ppd="", pta="";
+        int contp=1;
+
+        //recorremos la lista para extraer valores
+        for (int i=0; i<listaPoZ.Length(); i++){
+
+           Plantas_Vs_Zombies ag = listaPoZ.getPoZAt(i);
+
+                //si es planta lo mostramos en el catalogo planta
+            
+
+                        //recorremos los atributos del objeto y jalamos los 
+                        //valores para guardarlos en las variables respectivas
+                        pno=pno+"|"+Integer.toString(contp);
+                        pnom=pnom+"|"+ag.getNombre();
+                        ppa=ppa+"|"+ag.getPuntosA();
+                        ppd=ppd+"|"+ag.getPuntosD();
+                        pta=pta+"|"+ag.getTipo();
+
+                        contp++;
+           
+        }
+
+        //si termino esto quiere decir que ya tenemos todos 
+        //nuestros personajes en los string. Entonces:
+
+        String completo="digraph tabla {"+
+            "node [shape=record];"+
+            "Titulo[label=\"Catalogo de Plantas\"];" +
+            "node [shape=record];"+
+            "Catalogo[label=\""+
+            "{No."+pno+
+            "}|{Nombre"+pnom+
+            "}|{P. Ataque"+ppa+
+            "}|{P. Defensa"+ppd+
+            "}|{Tipo Ataque"+pta+
+            "}\"];Titulo -> Catalogo;}";;
+            
+        //señalaremos que catalogo queremos si p o z y guardamos en titulo
+        String titulo="Catalogo de Plantas";
+
+        Metodo_Imprimir_Pintar Dibujar = new Metodo_Imprimir_Pintar(titulo,completo); 
+         
+         JOptionPane.showMessageDialog(this,"Imagen generada por medio de Graphiz con éxito en :\\"+titulo+".jpg"); 
+    }//GEN-LAST:event_btnCatalogoPlantasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -170,6 +230,7 @@ mostrar.setLocationRelativeTo(null);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCatalogoPlantas;
     private javax.swing.JButton btnCrearPlantas;
     private javax.swing.JButton btnCrearZombies;
     private javax.swing.JButton btnEliminar;

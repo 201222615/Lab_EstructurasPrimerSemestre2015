@@ -11,15 +11,14 @@ package practica1_estructurasdedatos_primersemestre2015;
  * @author juanpablo
  */
 public class PlantasVsZombies extends javax.swing.JFrame {
-
-    /**
-     * Creates new form PlantasVsZombies
-     */
+avion av;
        Reproductor Music = new Reproductor();
        
     public PlantasVsZombies() {
-        initComponents();
-        Music.Play("C:\\Users\\juanpablo\\Documents\\NetBeansProjects\\Lab_EstructurasPrimerSemestre2015\\Practica1_EstructurasDeDatos_PrimerSemestre2015\\src\\Musica\\Staff Roll.mp3");
+        initComponents();     
+            av = new avion(this,this.jLabel1);
+        this.add(av);
+        this.addKeyListener(av);
     }
 
     /**
@@ -31,82 +30,48 @@ public class PlantasVsZombies extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnParar = new javax.swing.JButton();
-        lblPrueba = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        lblMuñeco = new javax.swing.JLabel();
+        btnSalir = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        List_ColaZombies = new javax.swing.JList();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        List_PilaPlantas = new javax.swing.JList();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(960, 593));
         setResizable(false);
         getContentPane().setLayout(null);
 
-        btnParar.setText("jButton1");
-        btnParar.addActionListener(new java.awt.event.ActionListener() {
+        lblMuñeco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/plantachiquita.png"))); // NOI18N
+        getContentPane().add(lblMuñeco);
+        lblMuñeco.setBounds(140, 270, 110, 110);
+
+        btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPararActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(btnParar);
-        btnParar.setBounds(340, 140, 73, 23);
+        getContentPane().add(btnSalir);
+        btnSalir.setBounds(0, 490, 120, 100);
 
-        lblPrueba.setText("jLabel2");
-        getContentPane().add(lblPrueba);
-        lblPrueba.setBounds(370, 80, 34, 14);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/zombi.png"))); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(740, 280, 80, 100);
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(340, 220, 73, 23);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tablero.png"))); // NOI18N
+        jLabel1.setText("0");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(120, 10, 710, 580);
-
-        List_ColaZombies.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(List_ColaZombies);
-
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(830, 0, 130, 590);
-
-        List_PilaPlantas.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane2.setViewportView(List_PilaPlantas);
-
-        getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(0, 0, 120, 590);
+        jLabel1.setBounds(760, 10, 110, 14);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnPararActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPararActionPerformed
-        // TODO add your handling code here:
-        lblPrueba.setText("SE HA PARADO LA CANCION");
-    }//GEN-LAST:event_btnPararActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
         Music.Stop();
         PlantasVsZombies.this.dispose();
         Elegir_Bando ya = new Elegir_Bando();
         ya.setVisible(true);
       
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,13 +109,9 @@ public class PlantasVsZombies extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JList List_ColaZombies;
-    private javax.swing.JList List_PilaPlantas;
-    private javax.swing.JButton btnParar;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel lblPrueba;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel lblMuñeco;
     // End of variables declaration//GEN-END:variables
 }
